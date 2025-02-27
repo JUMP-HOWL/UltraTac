@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: UltraTac: Integrated Ultrasound-Augmented Visuotactile Sensor for Enhanced Robotic Perception
+title: UltraTac &#58;Integrated Ultrasound-Augmented Visuotactile Sensor for Enhanced Robotic Perception
 authors:
     A. M. Turing
 affiliations:
