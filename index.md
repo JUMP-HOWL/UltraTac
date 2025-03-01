@@ -37,14 +37,35 @@ Visuotactile sensors provide high-resolution tactile information but are incapab
 ## Structure Illustration
 ![FigStructure](/static/image/FigStructure.png)
 
+
+
+
+
+
 ## Sensor Fabrication
 ![Fabrication](/static/image/FigureFra.png)
+
+
+
+
+
 
 ## System Workflow
 ![Fabrication](/static/image/FigWorkflow.png)
 
+
+
+
+
+
 ## Timeline of System
 ![FigApplication3](/static/image/FigApplication3.png)
+
+
+
+
+
+## Video
 
 
 <!-- ## Background
