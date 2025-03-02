@@ -4,13 +4,15 @@ permalink: /
 
 title: UltraTac &#58;Integrated Ultrasound-Augmented Visuotactile Sensor for Enhanced Robotic Perception
 authors:
-    Junhao Gong<sup>1*</sup>, Kit-Wa Sou<sup>1*</sup>
+    Junhao Gong<sup>1*</sup>, Kit-Wa Sou<sup>1*</sup>, Shoujie Li<sup>1†</sup>, Changqing Guo<sup>1</sup>, Yan Huang<sup>1</sup>,  <br>   
+    Chuqiao Lyu<sup>1</sup>, Ziwu Song<sup>1</sup>, Wenbo Ding<sup>1†</sup>  <br> 
 affiliations:
+    <small>*Indicates Equal Contribution; †Indicates Corresponding Authors.</small> <br> 
     1.Tsinghua University
-paper: 
-video: 
-code: 
-data: 
+paper: https://scholar.google.com/
+hardware: https://scholar.google.com/ 
+code: https://scholar.google.com/
+video: https://scholar.google.com/
 ---
 
 <!-- Using HTML to center the abstract -->
@@ -18,8 +20,9 @@ data:
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-Visuotactile sensors provide high-resolution tactile information but are incapable of perceiving the material features of objects. We present UltraTac, an integrated sensor that combines visuotactile imaging with ultrasound sensing through a coaxial optoacoustic architecture. The design shares structural components and achieves consistent sensing regions for both modalities. Additionally, we incorporate acoustic matching into the traditional visuotactile sensor structure, enabling the integration of the ultrasound sensing modality without compromising visuotactile performance. Through tactile feedback, we can dynamically adjust the operating state of the ultrasound module to achieve more flexible functional coordination. Systematic experiments demonstrate three key capabilities: proximity detection in the 3–8 cm range (R² = 0.99), material classification (Precision: 99.20\%), and texture-material dual-mode object recognition achieves 92.11\% accuracy on a 15-class task. Finally, we integrate the sensor into a robotic manipulation system to concurrently detect container surface patterns and internal content, which verifies its promising potential for advanced human-machine interaction and precise robotic manipulation.
-
+        <!-- <span style="font-size:24px;"> -->
+            Visuotactile sensors provide high-resolution tactile information but are incapable of perceiving the material features of objects. We present UltraTac, an integrated sensor that combines visuotactile imaging with ultrasound sensing through a coaxial optoacoustic architecture. The design shares structural components and achieves consistent sensing regions for both modalities. Additionally, we incorporate acoustic matching into the traditional visuotactile sensor structure, enabling the integration of the ultrasound sensing modality without compromising visuotactile performance. Through tactile feedback, we can dynamically adjust the operating state of the ultrasound module to achieve more flexible functional coordination. Systematic experiments demonstrate three key capabilities: proximity detection in the 3–8 cm range (R² = 0.99), material classification (Precision: 99.20%), and texture-material dual-mode object recognition achieves 92.11% accuracy on a 15-class task. Finally, we integrate the sensor into a robotic manipulation system to concurrently detect container surface patterns and internal content, which verifies its promising potential for advanced human-machine interaction and precise robotic manipulation.
+        <!-- </span> -->
         </div>
     </div>
 </div>
@@ -28,43 +31,97 @@ Visuotactile sensors provide high-resolution tactile information but are incapab
 
 
 ## Major Contributions
-1.Integrated Sensor Architecture: Combines visuotactile imaging and ultrasound using a compact, coaxial design with a thin elastomer and optimized PZT transducer.
-2.Ultrasound-Enhanced Sensing: Enables non-contact proximity detection and contact-based material classification with dynamic mode switching.
-3.Experimental Validation: Demonstrates robust performance in object recognition tasks, supporting applications in robotics and inspection.
+<!-- <span style="font-size:24px;"> -->
+1.Integrated Sensor Architecture: Combines visuotactile imaging and ultrasound using a compact, coaxial design with a thin elastomer and optimized PZT transducer.<br>
+2.Ultrasound-Enhanced Sensing: Enables non-contact proximity detection and contact-based material classification with dynamic mode switching.<br>
+3.Experimental Validation: Demonstrates robust performance in object recognition tasks, supporting applications in robotics and inspection.<br>
+<!-- </span> -->
 
 ## Structure Illustration
-![FigStructure](/static/image/FigStructure.png)
-
+<div style="text-align: center;">
+<img src="/static/image/FigStructure.png" alt="FigStructure" style="width:85%;" />
+</div>
+<br>
+UltraTac delivers dual-modal perception by integrating surface texture information from camera imaging through an elastomer membrane with material properties detected via ultrasound, as shown in the figure above. We optimize the sensor's mechanics, materials, electronic systems, and algorithms to achieve effective dual-modal sensing capabilities.
+<br><br><br>
 
 
 
 
 
 ## Sensor Fabrication
-![Fabrication](/static/image/FigureFra.png)
+<div style="text-align: center;">
+<img src="/static/image/FigureFra.png" alt="FigureFra" style="width:100%;" />
+</div>
+<br>
+The fabrication process follows an eight-step procedure, as shown in the figure above, with parallel assembly for the upper and lower sensor components.
 
+#### Upper Housing Assembly  
+A 0.7 mm acrylic layer is bonded to the ring-shaped upper housing with cyanoacrylate adhesive, serving as both an acoustic matching and deformation platform. A 30:1 PDMS elastomer layer is cast, followed by a spin-coated (3000 rpm, 30s) HGM–PDMS membrane (1:1) for light blocking and ultrasound transmission. The assembly is heat-cured at 60 °C for three hours.
 
+#### Lower Housing Assembly  
+The camera module is centered in the lower housing, surrounded by an LED ring for uniform illumination. The annular PZT transducer is aligned coaxially with the optical axis, and tungsten-loaded epoxy (3:2) is injected behind it for acoustic backing. This assembly is also heat-cured at 60 °C for three hours. Finally, both parts are aligned and combined into the coaxial sensor module.
+
+<br><br><br>
 
 
 
 
 ## System Workflow
-![Fabrication](/static/image/FigWorkflow.png)
+<div style="text-align: center;">
+<img src="/static/image/FigWorkflow.png" alt="Fabrication" style="width:50%;" />
+</div>
+<br>
+The pipeline is structured into three hierarchical levels: sensor, preprocessing, and processing.
 
+#### Sensor Level  
+The ultrasound module consists of a transducer connected to a sensor AFE, which extracts echo envelopes and communicates bidirectionally with the MCU for gain control. Meanwhile, the camera module captures tactile images in parallel.
 
+#### Preprocessing Stage  
+Ultrasound signals undergo Kalman filtering for noise reduction, while tactile images are augmented. A synchronization mechanism aligns the 50 Hz ultrasound data with the 30 Hz visual data by pairing each ultrasonic measurement with its nearest camera frame.
 
+#### Processing Level  
+Upon detecting touch, a dual-pathway approach is triggered. A camera-based touch signal determines whether ultrasound data is routed to Time-of-Flight (ToF) detection for distance estimation in non-contact scenarios or to XGBoost for material classification using Fourier features in contact scenarios. Simultaneously, a ResNet model processes tactile images for texture recognition\cite{resnet}.
+<br><br><br>
 
 
 
 ## Timeline of System
-![FigApplication3](/static/image/FigApplication3.png)
+<div style="text-align: center;">
+<img src="/static/image/FigApplication3.png" alt="FigApplication3" style="width:100%;" />
+</div>
+<br>
+The inspection process follows a structured timeline and consists of three phases: approach and grasp, touch, and take.
 
+#### Approach and Grasp (0–2s)  
+The ultrasound modality enables proximity sensing using Time-of-Flight (ToF) calculations to determine the optimal grasp position accurately.
 
+#### Touch Phase (2s–onward)  
+Uphe tacton contact, the sensor transitions its working mode. Tile modality captures surface textures, such as a hexagonal pattern, while the ultrasound modality switches to material detection, analyzing internal contents through spectral echo characteristics.
+
+#### Take Phase  
+The robotic arm transports the container to its designated location, guided by both surface patterns and internal content analysis.
+
+<br><br><br>
 
 
 
 ## Video
+<br><br><br><br><br>
 
+## Citation
+
+
+<!-- 
+@article{turing1936computable,
+  title={On computable numbers, with an application to the Entscheidungsproblem},
+  author={Turing, Alan Mathison},
+  journal={Journal of Mathematics},
+  volume={58},
+  number={345-363},
+  pages={5},
+  year={1936}
+} -->
 
 <!-- ## Background
 The paper "On Computable Numbers, with an Application to the Entscheidungsproblem" was published by Alan Turing in 1936. In this groundbreaking paper, Turing introduced the concept of a universal computing machine, now known as the Turing machine.
