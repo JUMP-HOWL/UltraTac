@@ -41,10 +41,10 @@ video: https://scholar.google.com/
 <div style="text-align: center;">
 <img src="/static/image/FigStructure.png" alt="FigStructure" style="width:85%;" />
 </div>
+<!-- ![Fabrication](/static/image/FigStructure.png){ width=85% } -->
 <br>
 UltraTac delivers dual-modal perception by integrating surface texture information from camera imaging through an elastomer membrane with material properties detected via ultrasound, as shown in the figure above. We optimize the sensor's mechanics, materials, electronic systems, and algorithms to achieve effective dual-modal sensing capabilities.
 <br><br><br>
-
 
 
 
