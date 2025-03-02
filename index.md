@@ -38,10 +38,10 @@ video: https://scholar.google.com/
 <!-- </span> -->
 
 ## Structure Illustration
-<div style="text-align: center;">
-<img src="/static/image/FigStructure.png" alt="FigStructure" style="width:85%;" />
-</div>
-<!-- ![Fabrication](/static/image/FigStructure.png){ width=85% } -->
+<!-- <div style="text-align: center;"> -->
+<!-- <img src="/static/image/FigStructure.png" alt="FigStructure" style="width:85%;" /> -->
+<!-- </div> -->
+![Fabrication](/static/image/FigStructure.png)
 <br>
 UltraTac delivers dual-modal perception by integrating surface texture information from camera imaging through an elastomer membrane with material properties detected via ultrasound, as shown in the figure above. We optimize the sensor's mechanics, materials, electronic systems, and algorithms to achieve effective dual-modal sensing capabilities.
 <br><br><br>
@@ -50,9 +50,10 @@ UltraTac delivers dual-modal perception by integrating surface texture informati
 
 
 ## Sensor Fabrication
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
 <img src="/static/image/FigureFra.png" alt="FigureFra" style="width:100%;" />
-</div>
+</div> -->
+![Fabrication](/static/image/FigureFra.png)
 <br>
 The fabrication process follows an eight-step procedure, as shown in the figure above, with parallel assembly for the upper and lower sensor components.
 
@@ -68,9 +69,10 @@ The camera module is centered in the lower housing, surrounded by an LED ring fo
 
 
 ## System Workflow
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
 <img src="/static/image/FigWorkflow.png" alt="Fabrication" style="width:50%;" />
-</div>
+</div> -->
+![Fabrication](/static/image/FigWorkflow.png)
 <br>
 The pipeline is structured into three hierarchical levels: sensor, preprocessing, and processing.
 
@@ -87,9 +89,10 @@ Upon detecting touch, a dual-pathway approach is triggered. A camera-based touch
 
 
 ## Timeline of System
-<div style="text-align: center;">
+<!-- <div style="text-align: center;">
 <img src="/static/image/FigApplication3.png" alt="FigApplication3" style="width:100%;" />
-</div>
+</div> -->
+![Fabrication](/static/image/FigApplication3.png)
 <br>
 The inspection process follows a structured timeline and consists of three phases: approach and grasp, touch, and take.
 
